@@ -9,6 +9,7 @@
     --rgb: rgba(255, 255, 255, 0.6)
     --join-sircle: rgba(255, 255, 255, 0.1);
     --bkg-drop: rgba(0, 0, 0, 0.2);
+    --imgoverlay: rgba(47, 48, 58, 0.8);
 }
 html {
     box-sizing: border-box;
@@ -216,6 +217,7 @@ address {
     letter-spacing: 0.02em;
     color: var(--black-cl);
 }
+
 /* линия для меню в хедере */
 .current::after {
     content: "";
@@ -253,12 +255,8 @@ address {
     text-align: center;
 }
 .hero-bag {
-    min-width: 1600px;
-    background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
+    /* min-width: 1600px; */
+    background-image: linear-gradient(to right,rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../img/img.hero.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -357,44 +355,52 @@ address {
     margin-top: 30px;
     margin-left: 30px;
     flex-basis: calc(100% / 3 - 30px);
-    
 }
+/* внутренние секции */ /* дисктопные предложения */
+.inside-section .link::before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    background: var(--imgoverlay);
+  
+    position: absolute;
+    bottom: 0;
+  }
+  .inside-section .whatwedo-item {
+    position: relative;
+  }
+.inside-section .whatwedo-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .inside-section .li-item:not(:nth-child(3n)) {
+    margin-right: 30px;
+  }
+  
+  .inside-section .li-item:not(:nth-last-child(-n + 3)) {
+    margin-bottom: 30px;
+  }
+    
+.overlay-disctop {
+    position: absolute;
+    bottom: 0;
 
-/* .disctop{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 14px;
+    margin: 0;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 700;
     line-height: 1.14;
-    text-align: center;
-    letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--white-cl);
-    
 }
-.disctop::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(47, 48, 58, 0.8);
-    
-    
-}
-.disctops {
-    position: relative;
-}
-.disctop  {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-bottom: 0px;
-    
 
-} */
 /* модальное окно */
 .close-button {
     display: block;
