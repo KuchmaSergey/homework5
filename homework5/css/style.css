@@ -11,6 +11,7 @@
     --bkg-drop: rgba(0, 0, 0, 0.2);
     --imgoverlay: rgba(47, 48, 58, 0.8);
     --back-overlay: rgba(33, 150, 243, 0.9);
+    --header-line: #ECECEC;
 }
 html {
     box-sizing: border-box;
@@ -99,6 +100,7 @@ address {
     width: 20px;
     height: 20px;
     fill: var(--social-cl);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icons-item:not(:last-child) {
@@ -116,6 +118,12 @@ address {
     background-color: var(--white-cl);
     
 }
+
+.header-line {
+    border-bottom: 1px solid var(--header-line);
+    padding-bottom: 24px;
+}
+
 .header {
     background-color: var(--white-cl);
     margin-top: 24px;
@@ -125,6 +133,7 @@ address {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    
 }
 .header .logohed {
     margin-right: 93px;
@@ -229,7 +238,7 @@ address {
   
     position: absolute;
     left: 0;
-    bottom: -50,5px;
+    bottom: -30px;
 }
    .current {
     color: var(--accent-cl);
@@ -261,6 +270,11 @@ address {
     url(../img/img.hero.jpg);
     background-repeat: no-repeat;
     background-position: center;
+}
+.hero-btn .portfolio-btn {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
    
 .btn {
@@ -570,6 +584,7 @@ address {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .circle:hover,
 .circle:focus {
@@ -617,6 +632,7 @@ address {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .join-icons {
     width: 20px;
